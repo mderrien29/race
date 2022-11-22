@@ -69,8 +69,8 @@ average_last_n_lines_file () {
 
 echo $URL1 > $temp_file
 for run in $(seq 1 $N); do request $URL1 >> $temp_file; done
-echo "AVERAGE= `average_last_n_lines_file $N $temp_file`" >> $temp_file
+echo "`average_last_n_lines_file $N $temp_file`s" >> $temp_file
 echo $URL2 >> $temp_file
 for run in $(seq 1 $N); do request $URL2 >> $temp_file; done
-echo "AVERAGE= `average_last_n_lines_file $N $temp_file`" >> $temp_file
+echo "`average_last_n_lines_file $N $temp_file`s" >> $temp_file
 cat $temp_file
